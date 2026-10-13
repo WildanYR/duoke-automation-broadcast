@@ -1,0 +1,18 @@
+{
+  "name": "duoke-chat-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js --config config.toml",
+    "check": "node --check src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "better-sqlite3": "^13.0.3",
+    "playwright": "^1.62.1"
+  }
+}

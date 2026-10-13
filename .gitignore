@@ -1,0 +1,7 @@
+node_modules/
+.duoke-profile/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+npm-debug.log*
+

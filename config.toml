@@ -1,0 +1,51 @@
+[duoke]
+url = "https://web.duoke.com/#/dk/main/chat"
+profile_dir = ".duoke-profile"
+headless = false
+
+[storage]
+sqlite_path = "duoke-sent.sqlite"
+
+[automation]
+# Waktu untuk login manual jika profile belum memiliki sesi login.
+login_timeout_ms = 300000
+
+# Timeout state per operasi (open buyer, composer, send confirmation, dll).
+state_timeout_ms = 15000
+
+# Batas maksimum phase scan seluruh conversation list.
+collection_timeout_ms = 600000
+
+# Polling state DOM. Ini bukan fixed sleep untuk menyatakan ready.
+poll_interval_ms = 150
+
+# Besar langkah scroll terhadap tinggi viewport list.
+scroll_step_ratio = 0.80
+
+# Saat sudah di bottom, harus tetap bottom + tidak ada buyer baru + tidak loading
+# selama beberapa probe sebelum dianggap benar-benar habis.
+bottom_probe_interval_ms = 750
+bottom_stable_rounds = 4
+
+# Debounce fallback untuk history yang benar-benar kosong dan tidak memiliki
+# empty marker eksplisit dari Duoke.
+history_empty_stable_rounds = 4
+
+# Optional pacing antar pesan/buyer. Nilai 0 juga valid.
+between_messages_ms = 500
+between_buyers_ms = 800
+
+[chat]
+# Array mendukung lebih dari satu pesan per buyer. Triple quote TOML mendukung
+# multiline tanpa perlu \n manual.
+messages = [
+"""
+produk digital diblok sopi
+""",
+"""
+info: pembelian selanjutnya pindah diw
+""",
+"""
+O856 | 01431 | 281
+"""
+]
